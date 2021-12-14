@@ -37,7 +37,7 @@ public class weaponControl : MonoBehaviour
         {
             //create bullet - fire
             //Debug.Log(transform.rotation);
-            Instantiate(bullet, firePoint.position, transform.rotation * Quaternion.Euler(1, 0, -3));
+            Instantiate(bullet, firePoint.position, transform.rotation * Quaternion.Euler(1, 0, -2.5f));
             coolDown = 0.3f;
 
             //Shot audio
