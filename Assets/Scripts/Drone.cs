@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class Drone : MonoBehaviour
 {
+    public GameObject droneBlowUp;
     private Transform player;
-    private float followDistance = 30f, lookAtDistance = 80;
-    public float speed = 10f;
-    private float distance;
     private float droneCd = 3;
+    public float speed = 10f;
+    private float droneHealth = 25f;
+
+    private float distance;
+    private float followDistance = 30f, lookAtDistance = 80;
+    
 
     private CharacterState characterState;
     private Animator animator;
@@ -31,6 +35,17 @@ public class Drone : MonoBehaviour
     void Update()
     {
         FollowPlayer();
+    }
+
+    public void GetHit(float hitDamage)
+    {
+        droneHealth -= hitDamage;
+
+        if(droneHealth <= 0)
+        {
+            Destroy(this.gameObject);
+            Instantiate(droneBlowUp, transform.position, Quaternion.identity);
+        }
     }
 
     private void FollowPlayer()

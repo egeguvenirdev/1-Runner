@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class playerManagement : MonoBehaviour
 {
-    //private bool playerAlive = true;
+    private float playerHealth = 50f;
     public GameObject death_effect;
-    public void Death(bool playerCheck)
+
+
+    public void PlayerDeath(float playerDamage)
     {
-        if (playerCheck == false)
+        Instantiate(death_effect, transform.position, Quaternion.identity);
+
+        playerHealth -= playerDamage;
+
+        if (playerHealth <= 0)
         {
-            Instantiate(death_effect, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
-            //playerAlive = false;
         }
     }
 }

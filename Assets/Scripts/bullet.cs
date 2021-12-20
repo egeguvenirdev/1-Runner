@@ -7,6 +7,14 @@ public class bullet : MonoBehaviour
     //bullet
     private float speed = 150;
     private float lifeTime = 5f;
+
+    private playerManagement player;
+
+    private void Start()
+    {
+        player = FindObjectOfType<playerManagement>();
+    }
+
     void FixedUpdate()
     {
         transform.Translate(Vector3.up * Time.deltaTime * speed);
@@ -22,14 +30,18 @@ public class bullet : MonoBehaviour
     {
         if (collision.gameObject.layer == 8)
         {
-            Debug.Log("test");
             Destroy(this.gameObject);
         }
 
         if (collision.gameObject.layer == 9)
         {
-            Destroy(collision.gameObject);
-            Debug.Log("test1");
+            player.PlayerDeath(25);
+        }
+
+        if (collision.gameObject.layer == 10)
+        {
+            Destroy(this.gameObject);
+            collision.gameObject.GetComponent<Drone>().GetHit(5);
         }
 
     }

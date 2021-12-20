@@ -28,7 +28,7 @@ public class Laser : MonoBehaviour
         if(Physics.Raycast(transform.position, transform.forward, out hit, 40.85f, player))
         {
             //Destroy(hit.transform.gameObject);
-            hit.transform.gameObject.GetComponent<playerManagement>().Death(false);
+            hit.transform.gameObject.GetComponent<playerManagement>().PlayerDeath(5);
         }
 
     }

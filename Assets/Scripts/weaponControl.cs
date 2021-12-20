@@ -8,11 +8,14 @@ public class weaponControl : MonoBehaviour
 
     private CharacterState characterState;
     private Animator animator;
+    private playerManagement player;
+
     enum CharacterState
     {
         Idle = 0,
         Shot = 1,
     }
+
 
     //fire
     public GameObject bullet;
@@ -27,6 +30,7 @@ public class weaponControl : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
+        player = FindObjectOfType<playerManagement>();
     }
     void Update()
     {
@@ -41,7 +45,7 @@ public class weaponControl : MonoBehaviour
             coolDown = 0.3f;
 
             //Shot audio
-            GameObject.FindGameObjectWithTag("Player").GetComponent<AudioSource>().PlayOneShot(gunShot);
+            player.GetComponent<AudioSource>().PlayOneShot(gunShot);
 
             //Animation
             SetShotAnim();

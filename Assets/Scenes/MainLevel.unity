@@ -470,7 +470,7 @@ Transform:
   m_Children:
   - {fileID: 1002995204}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &701985388
 GameObject:
@@ -699,6 +699,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drone Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 377491125035517999, guid: e2f56c1b9aeb8ad4c88c994a9de9a5d6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 377491125035684879, guid: e2f56c1b9aeb8ad4c88c994a9de9a5d6,
         type: 3}
       propertyPath: m_RootOrder
@@ -903,6 +908,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!64 &1002995206
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002995203}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 28723f10c2a8e094a9351e892f5271b8, type: 3}
 --- !u!1 &1106050643
 GameObject:
   m_ObjectHideFlags: 0
@@ -1133,7 +1152,7 @@ Transform:
   m_LocalScale: {x: 20, y: 0.1, z: 20}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1153599859
 BoxCollider:
@@ -1942,7 +1961,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   gravity: -0.3
-  jumpVelocity: 0.27
+  jumpVelocity: 0.29
   groundedGravity: 0.001
   groundChecker: {fileID: 1833005842}
   obstacleLayer:
@@ -1981,7 +2000,7 @@ Transform:
   - {fileID: 1833005842}
   - {fileID: 785530488}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &2081669121
 AudioSource:
