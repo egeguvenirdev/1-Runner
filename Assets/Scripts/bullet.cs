@@ -10,6 +10,8 @@ public class bullet : MonoBehaviour
 
     private playerManagement player;
 
+    public GameObject bulletDestroyParticle;
+
     private void Start()
     {
         player = FindObjectOfType<playerManagement>();
@@ -28,17 +30,18 @@ public class bullet : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer == 8)
+        if (collision.gameObject.tag == "Obstacle" || collision.gameObject.tag == "Lava")
         {
+            Instantiate(bulletDestroyParticle, transform.position, transform.rotation * Quaternion.Euler(-90, 0, 0));
             Destroy(this.gameObject);
         }
 
-        if (collision.gameObject.layer == 9)
+        if (collision.gameObject.tag == "Player")
         {
             player.PlayerDeath(25);
         }
 
-        if (collision.gameObject.layer == 10)
+        if (collision.gameObject.tag == "Enemy")
         {
             Destroy(this.gameObject);
             collision.gameObject.GetComponent<Drone>().GetHit(5);
