@@ -38,7 +38,8 @@ public class bullet : MonoBehaviour
 
         if (collision.gameObject.tag == "Player")
         {
-            player.PlayerDeath(25);
+            Debug.Log("hit");
+            player.PlayerDeath(2f);
         }
 
         if (collision.gameObject.tag == "Enemy")

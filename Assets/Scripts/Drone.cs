@@ -71,7 +71,7 @@ public class Drone : MonoBehaviour
 
             if (droneCd <= 0)
             {
-                Debug.Log(droneCd);
+                //Debug.Log(droneCd);
 
                 SetShotAnim();
                 Instantiate(bullet, firePoint.position, transform.rotation * Quaternion.Euler(-270, 0, 0));

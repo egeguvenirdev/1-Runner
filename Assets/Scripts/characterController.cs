@@ -16,7 +16,7 @@ public class characterController : MonoBehaviour
     public float groundedGravity;
 
     public Transform groundChecker;
-    private float groundCheckerRadius = 0.2f;
+    private float groundCheckerRadius = 0.35f;
     public LayerMask obstacleLayer;
 
     //camera movement
@@ -42,11 +42,11 @@ public class characterController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftShift) && onGround)
         {
-            speed = 40;
+            speed = 60;
         }
         else
         {
-            speed = 20;
+            speed = 40;
         }
 
         Vector3 moveInputs = Input.GetAxis("Horizontal") * transform.right + Input.GetAxis("Vertical") * transform.forward;
@@ -72,7 +72,7 @@ public class characterController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && onGround)
         {
-            Debug.Log(onGround);
+            //Debug.Log(onGround);
             velocity.y = jumpVelocity;
         }
 
