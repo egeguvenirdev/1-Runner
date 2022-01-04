@@ -34,14 +34,17 @@ public class Drone : MonoBehaviour
 
     void Update()
     {
-        FollowPlayer();
+        if (player.gameObject != null)
+        {
+            FollowPlayer();
+        }
     }
 
     public void GetHit(float hitDamage)
     {
         droneHealth -= hitDamage;
 
-        if(droneHealth <= 0)
+        if(droneHealth <= 0 && gameObject != null)
         {
             Destroy(this.gameObject);
             Instantiate(droneBlowUp, transform.position, Quaternion.identity);

@@ -14,7 +14,7 @@ public class playerManagement : MonoBehaviour
 
         playerHealth -= playerDamage;
 
-        if (playerHealth <= 0)
+        if (playerHealth <= 0 && gameObject != null)
         {
             Destroy(this.gameObject);
         }

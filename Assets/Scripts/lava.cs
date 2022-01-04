@@ -16,11 +16,11 @@ public class lava : MonoBehaviour
         Debug.Log("enter bullet");
         if (collision.gameObject.tag == "Player")
         {
-            player.PlayerDeath(5f);
-            Debug.Log("enter");
+            Debug.Log("entered the lava area");
+            InvokeRepeating("PlayerLavaHit", 0.1f, 0.5f);
         }
     }
-    private void OnCollisionStay(Collision collision)
+    /*private void OnCollisionStay(Collision collision)
     {
         Debug.Log("stay bullet");
         if (collision.gameObject.tag == "Player")
@@ -28,15 +28,15 @@ public class lava : MonoBehaviour
             player.PlayerDeath(5f);
             Debug.Log("stay");
         }
-    }
+    }*/
 
     private void OnCollisionExit(Collision collision)
     {
         Debug.Log("exit bullet");
         if (collision.gameObject.tag == "Player")
         {
-            player.PlayerDeath(5f);
-            Debug.Log("exit");
+            Debug.Log("lefted the lava area");
+            CancelInvoke();
         }
     }
 
@@ -54,12 +54,11 @@ public class lava : MonoBehaviour
         {
             CancelInvoke();
         }
-    }
+    }*/
 
     private void PlayerLavaHit()
     {
         player.PlayerDeath(5f);
-        Debug.Log("lava 2");
         Debug.Log(player.playerHealth);
-    }*/
+    }
 }
