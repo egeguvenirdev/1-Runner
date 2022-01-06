@@ -40,22 +40,6 @@ public class lava : MonoBehaviour
         }
     }
 
-    /*void OnTriggerEnter(Collider hit)
-    {
-        if (hit.gameObject.tag == "Player")
-        {
-            InvokeRepeating("PlayerLavaHit", 2, 1);
-            Debug.Log("lava 2");
-        }
-    }
-    void OnTriggerExit(Collider hit)
-    {
-        if (hit.gameObject.tag == "Player")
-        {
-            CancelInvoke();
-        }
-    }*/
-
     private void PlayerLavaHit()
     {
         player.PlayerDeath(5f);
