@@ -44,6 +44,7 @@ public class bullet : MonoBehaviour
 
         if (collision.gameObject.tag == "Enemy")
         {
+            Instantiate(bulletDestroyParticle, transform.position, transform.rotation * Quaternion.Euler(-90, 0, 0));
             Destroy(this.gameObject);
             collision.gameObject.GetComponent<Drone>().GetHit(5);
         }
