@@ -525,6 +525,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 977e7278d3486f1489724a6d226b9ca0, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 977e7278d3486f1489724a6d226b9ca0, type: 3}
 --- !u!1001 &78605677
@@ -5182,6 +5186,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 463091696}
     m_Modifications:
+    - target: {fileID: 1002995207, guid: e2f56c1b9aeb8ad4c88c994a9de9a5d6, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 377491125035517999, guid: e2f56c1b9aeb8ad4c88c994a9de9a5d6,
         type: 3}
       propertyPath: m_Name
@@ -14822,29 +14830,30 @@ MonoBehaviour:
   - {fileID: 2521259064523006103, guid: 30f0e3ae222042a45ab836a07e6597fd, type: 3}
   - {fileID: 4901715949937786056, guid: 273d0b02d6790aa4f9f99fd710fa093f, type: 3}
   - {fileID: 3343236487514400486, guid: fccfa9298fd7c854fb32ae7f877286af, type: 3}
-  fallinRocksTransforms:
-  - {fileID: 2005117082}
-  - {fileID: 476392628}
-  - {fileID: 127179925}
-  - {fileID: 1842039614}
-  - {fileID: 230688811}
-  - {fileID: 1544361354}
-  - {fileID: 487254167}
-  - {fileID: 805571919}
-  - {fileID: 1498105922}
-  - {fileID: 759642913}
-  - {fileID: 998234349}
-  - {fileID: 103630897}
-  - {fileID: 1211178217}
-  - {fileID: 874042073}
-  - {fileID: 1749154214}
-  - {fileID: 2088401212}
-  - {fileID: 1529085444}
-  - {fileID: 423407744}
-  - {fileID: 1488680785}
-  - {fileID: 921506696}
-  - {fileID: 135118230}
-  - {fileID: 820841685}
+  rockInstantiateTransforms:
+  - {fileID: 1776233423}
+  - {fileID: 2005117083}
+  - {fileID: 476392629}
+  - {fileID: 127179926}
+  - {fileID: 1842039615}
+  - {fileID: 230688812}
+  - {fileID: 1544361355}
+  - {fileID: 487254168}
+  - {fileID: 805571920}
+  - {fileID: 1498105923}
+  - {fileID: 759642914}
+  - {fileID: 998234350}
+  - {fileID: 103630898}
+  - {fileID: 1211178218}
+  - {fileID: 874042074}
+  - {fileID: 1749154215}
+  - {fileID: 2088401213}
+  - {fileID: 1529085445}
+  - {fileID: 423407745}
+  - {fileID: 1488680786}
+  - {fileID: 921506697}
+  - {fileID: 135118231}
+  - {fileID: 820841686}
 --- !u!1001 &1826844462
 PrefabInstance:
   m_ObjectHideFlags: 0

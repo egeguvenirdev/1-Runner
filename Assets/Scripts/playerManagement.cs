@@ -19,12 +19,4 @@ public class playerManagement : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-    /*void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        if (hit.gameObject.tag == "Lava")
-        {
-            PlayerDeath(1f);
-            Debug.Log("player");
-        }
-    }*/
 }

@@ -13,14 +13,13 @@ public class LvTrigger : MonoBehaviour
         if (enterTrigger)
         {
             Invoke("TriggerOff", 1f);
-            lm.enter = true;
-            lm.TriggerRocks();
+            lm.EnterMethod();
         }
 
         else
         {
             Invoke("TriggerOff", 1f);
-            lm.exit = true;
+            lm.ExitMethod();
         }
     }
 

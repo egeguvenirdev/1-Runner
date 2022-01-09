@@ -11,11 +11,11 @@ public class LevelManager : MonoBehaviour
     //random number variables
     private int randomRock;
     private int randomTransform;
-    private GameObject rockPosition;
+    private Transform rockPosition;
 
     //fallin rocks and their random transforms
     public GameObject[] fallinRocks;
-    public GameObject[] fallinRocksTransforms;
+    public Transform[] rockInstantiateTransforms;
 
     // Update is called once per frame
     /*private void Update()
@@ -26,20 +26,26 @@ public class LevelManager : MonoBehaviour
         }
     }*/
 
-    public void TriggerRocks()
+    public void EnterMethod()
     {
-        StartCoroutine(DropRocks(10));
+        enter = true;
+        StartCoroutine(DropRocks());
     }
 
-    IEnumerator DropRocks(int rockNumber)
+    public void ExitMethod()
+    {
+        exit = true;
+    }
+
+    IEnumerator DropRocks()
     {
         while (enter == true)
         {
             randomRock = Random.Range(0, (fallinRocks.Length));
 
-            randomTransform = Random.Range(0, (fallinRocksTransforms.Length));
+            randomTransform = Random.Range(0, (rockInstantiateTransforms.Length));
 
-            rockPosition = fallinRocksTransforms[randomTransform];
+            rockPosition = rockInstantiateTransforms[randomTransform];
 
             Debug.Log("Coroutine instantiate");
             Instantiate(fallinRocks[randomRock], rockPosition.transform.position, rockPosition.transform.rotation);
