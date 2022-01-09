@@ -4,19 +4,27 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
+    //exit and enter triggers
     public bool enter = false;
     public bool exit = false;
 
-    public GameObject[] fallinrocks;
+    //random number variables
+    private int randomRock;
+    private int randomTransform;
+    private GameObject rockPosition;
+
+    //fallin rocks and their random transforms
+    public GameObject[] fallinRocks;
+    public GameObject[] fallinRocksTransforms;
 
     // Update is called once per frame
-    private void Update()
+    /*private void Update()
     {
         if(enter == true)
         {
         
         }
-    }
+    }*/
 
     public void TriggerRocks()
     {
@@ -27,8 +35,15 @@ public class LevelManager : MonoBehaviour
     {
         while (enter == true)
         {
-            //Instantiate
-            yield return new WaitForSeconds(1f);
+            randomRock = Random.Range(0, (fallinRocks.Length));
+
+            randomTransform = Random.Range(0, (fallinRocksTransforms.Length));
+
+            rockPosition = fallinRocksTransforms[randomTransform];
+
+            Debug.Log("Coroutine instantiate");
+            Instantiate(fallinRocks[randomRock], rockPosition.transform.position, rockPosition.transform.rotation);
+            yield return new WaitForSeconds(2f);
         }
     }
 }
