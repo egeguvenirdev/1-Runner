@@ -10,13 +10,24 @@ public class playerManagement : MonoBehaviour
 
     public void PlayerDeath(float playerDamage)
     {
+        //blood loss effect
         Instantiate(death_effect, transform.position, Quaternion.identity);
 
         playerHealth -= playerDamage;
 
+
+        //death
         if (playerHealth <= 0 && gameObject != null)
         {
-            Destroy(this.gameObject);
+            //lock player movements
+            GetComponent<Jump>().enabled = false;
+            GetComponent<FirstPersonMovement>().enabled = false;
+            GetComponent<Crouch>().enabled = false;
+
+            //unluck cursor for ui
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+
         }
     }
 }

@@ -13,10 +13,8 @@ public class lava : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("enter bullet");
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("entered the lava area");
             InvokeRepeating("PlayerLavaHit", 0.1f, 0.5f);
         }
     }
@@ -32,10 +30,8 @@ public class lava : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        Debug.Log("exit bullet");
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("lefted the lava area");
             CancelInvoke();
         }
     }
@@ -43,6 +39,6 @@ public class lava : MonoBehaviour
     private void PlayerLavaHit()
     {
         player.PlayerDeath(5f);
-        Debug.Log(player.playerHealth);
+        //Debug.Log(player.playerHealth);
     }
 }

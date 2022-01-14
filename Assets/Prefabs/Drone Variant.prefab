@@ -167,24 +167,6 @@ Transform:
   m_Father: {fileID: 377491125035684879}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &723951172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 377491125035517999}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3060ee4e09bb51c4a96b2f475570f7cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  droneBlowUp: {fileID: 0}
-  speed: 10
-  bullet: {fileID: 5248473108970016601, guid: 2858b46af56d4e64389faad2d8bcda44, type: 3}
-  firePoint: {fileID: 1920525956}
-  shotEffect: {fileID: 424831747357875335, guid: 59045dbe2f225e84bae9083b467c1f5c,
-    type: 3}
 --- !u!54 &1002995207
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -234,6 +216,25 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &723951172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377491125035517999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3060ee4e09bb51c4a96b2f475570f7cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  droneBlowUp: {fileID: 6830490830279841588, guid: 2f2fb388b6bafef42990b316cebed165,
+    type: 3}
+  speed: 10
+  bullet: {fileID: 5248473108970016601, guid: 2858b46af56d4e64389faad2d8bcda44, type: 3}
+  firePoint: {fileID: 1920525956}
+  shotEffect: {fileID: 424831747357875335, guid: 59045dbe2f225e84bae9083b467c1f5c,
+    type: 3}
 --- !u!1001 &377491125035552399
 PrefabInstance:
   m_ObjectHideFlags: 0

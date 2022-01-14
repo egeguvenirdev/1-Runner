@@ -5,41 +5,67 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     //exit and enter triggers
-    public bool enter = false;
-    public bool exit = false;
+    public bool playerEnter = false;
+    public bool playerExit = false;
+    private bool droneInstantiate = false;
 
     //random number variables
     private int randomRock;
     private int randomTransform;
     private Transform rockPosition;
+    private static int droneCounter = 0;
 
-    //fallin rocks and their random transforms
+    //fallin rocks & drones and their random transforms
     public GameObject[] fallinRocks;
+    public GameObject drone;
+    public Transform[] droneInstantiateTransforms;
     public Transform[] rockInstantiateTransforms;
 
-    // Update is called once per frame
-    /*private void Update()
-    {
-        if(enter == true)
-        {
-        
-        }
-    }*/
+    //maze blocks
+    public GameObject[] maze;
 
+
+    //when player has entered the lv
     public void EnterMethod()
     {
-        enter = true;
+        playerEnter = true;
+        droneInstantiate = true;
+
+        DroneSpawner();
         StartCoroutine(DropRocks());
+
     }
 
     public void ExitMethod()
     {
-        exit = true;
+        playerExit = true;
     }
 
+    public void LvMover(int lvCount)
+    {
+        Debug.Log(maze[lvCount].transform.position.z);
+        maze[lvCount].transform.position += new Vector3(0, 0, 1200f);
+    }
+
+    private void DroneSpawner()
+    {
+        if (droneInstantiate == true)
+        {
+            for (droneCounter = 0; droneCounter < 4; droneCounter++)
+            {
+                Debug.Log("drone instan");
+                Instantiate(drone, droneInstantiateTransforms[droneCounter].transform.position, 
+                    droneInstantiateTransforms[droneCounter].transform.rotation);
+            }
+            droneInstantiate = false;
+        }
+    }
+
+
+    //starting the fallin rocks
     IEnumerator DropRocks()
     {
-        while (enter == true)
+        while (playerEnter)
         {
             randomRock = Random.Range(0, (fallinRocks.Length));
 
@@ -49,7 +75,7 @@ public class LevelManager : MonoBehaviour
 
             Debug.Log("Coroutine instantiate");
             Instantiate(fallinRocks[randomRock], rockPosition.transform.position, rockPosition.transform.rotation);
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1f);
         }
     }
 }

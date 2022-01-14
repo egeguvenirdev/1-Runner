@@ -46,8 +46,8 @@ public class Drone : MonoBehaviour
 
         if(droneHealth <= 0 && gameObject != null)
         {
+            Instantiate(droneBlowUp, transform.position, Quaternion.Euler(-90, 0, 0));
             Destroy(this.gameObject);
-            Instantiate(droneBlowUp, transform.position, Quaternion.identity);
         }
     }
 
