@@ -6668,29 +6668,29 @@ MonoBehaviour:
   - {fileID: 7868269150462288600}
   - {fileID: 4680180169078021713}
   rockInstantiateTransforms:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 571574014221212533}
+  - {fileID: 1499312593959155011}
+  - {fileID: 3365322180035600457}
+  - {fileID: 7890660395367019907}
+  - {fileID: 8300295355039221102}
+  - {fileID: 4333953606349349448}
+  - {fileID: 2864484093937024009}
+  - {fileID: 6578879922823749690}
+  - {fileID: 9108223632174226660}
+  - {fileID: 1632398097617397863}
+  - {fileID: 6339109785332207947}
+  - {fileID: 5018462818399084334}
+  - {fileID: 6584862436743594642}
+  - {fileID: 5867893362694477697}
+  - {fileID: 3258037450340958004}
+  - {fileID: 1896985916378233474}
+  - {fileID: 7269245388393896606}
+  - {fileID: 3807800167744353212}
+  - {fileID: 6071894158977721462}
+  - {fileID: 525535227027048010}
+  - {fileID: 7140432358496188379}
+  - {fileID: 6419661462364241024}
+  - {fileID: 4448563066280856449}
   maze:
   - {fileID: 0}
   - {fileID: 3062971670588845000}
@@ -15865,7 +15865,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3062971671649395601}
   - component: {fileID: 3062971671649395603}
-  - component: {fileID: 3062971671649395602}
+  - component: {fileID: 8653157367070828612}
   m_Layer: 11
   m_Name: ExitCollider
   m_TagString: Untagged
@@ -15900,7 +15900,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 135, y: 70, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3062971671649395602
+--- !u!114 &8653157367070828612
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15909,11 +15909,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3062971671649395600}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36eb8f0411b6c654b8d6d9f57dfcbc98, type: 3}
+  m_Script: {fileID: 11500000, guid: 83aa0298ca850d74e810fcf985a8470d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lm: {fileID: 3062971670588845001}
-  enterTrigger: 0
+  et: {fileID: 3062971671658341003}
 --- !u!1 &3062971671658341001
 GameObject:
   m_ObjectHideFlags: 0
@@ -21560,7 +21560,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4735326525671080147}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 34.64045, z: -99.8852}
+  m_LocalPosition: {x: 0, y: 34.64045, z: -62.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 571574014221212533}

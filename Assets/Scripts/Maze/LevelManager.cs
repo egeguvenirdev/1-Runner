@@ -24,7 +24,6 @@ public class LevelManager : MonoBehaviour
     //maze blocks
     public GameObject[] maze;
 
-
     //when player has entered the lv
     public void EnterMethod()
     {
@@ -39,11 +38,11 @@ public class LevelManager : MonoBehaviour
     public void ExitMethod()
     {
         playerExit = true;
+        playerEnter = false;
     }
 
     public void LvMover(int lvCount)
     {
-        Debug.Log(maze[lvCount].transform.position.z);
         maze[lvCount].transform.position += new Vector3(0, 0, 1200f);
     }
 
@@ -53,14 +52,12 @@ public class LevelManager : MonoBehaviour
         {
             for (droneCounter = 0; droneCounter < 4; droneCounter++)
             {
-                Debug.Log("drone instan");
                 Instantiate(drone, droneInstantiateTransforms[droneCounter].transform.position, 
                     droneInstantiateTransforms[droneCounter].transform.rotation);
             }
             droneInstantiate = false;
         }
     }
-
 
     //starting the fallin rocks
     IEnumerator DropRocks()
@@ -73,7 +70,7 @@ public class LevelManager : MonoBehaviour
 
             rockPosition = rockInstantiateTransforms[randomTransform];
 
-            Debug.Log("Coroutine instantiate");
+
             Instantiate(fallinRocks[randomRock], rockPosition.transform.position, rockPosition.transform.rotation);
             yield return new WaitForSeconds(1f);
         }

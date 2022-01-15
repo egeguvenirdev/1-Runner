@@ -30,8 +30,7 @@ public class RockRotator : MonoBehaviour
 
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("hit");
-            player.PlayerDeath(2f);
+            player.PlayerDeath(5f);
         }
     }
 
