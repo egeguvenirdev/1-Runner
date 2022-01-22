@@ -5,6 +5,7 @@ using UnityEngine;
 public class bullet : MonoBehaviour
 {
     //bullet
+    public int bulletDamage;
     public float speed = 250;
     private float lifeTime = 5f;
 
@@ -38,8 +39,7 @@ public class bullet : MonoBehaviour
 
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("hit");
-            player.PlayerDeath(2f);
+            player.PlayerDeath(bulletDamage);
         }
 
         if (collision.gameObject.tag == "Enemy")

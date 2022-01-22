@@ -5,6 +5,7 @@ using UnityEngine;
 public class lava : MonoBehaviour
 {
     private playerManagement player;
+    public int lavaDamage;
 
     private void Start()
     {
@@ -38,7 +39,7 @@ public class lava : MonoBehaviour
 
     private void PlayerLavaHit()
     {
-        player.PlayerDeath(5f);
+        player.PlayerDeath(lavaDamage);
         //Debug.Log(player.playerHealth);
     }
 }

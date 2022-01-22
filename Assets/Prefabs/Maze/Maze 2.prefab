@@ -6650,6 +6650,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerEnter: 0
   playerExit: 0
+  exitTrigger: {fileID: 8653157367070828612}
   fallinRocks:
   - {fileID: 8124223991069104716, guid: d8cdde56ba5fb9041bb81dfacd68f168, type: 3}
   - {fileID: 5860241951590176064, guid: 3bf0802956966df48baf21e37095fa8c, type: 3}
@@ -16576,6 +16577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81cadd1529418d2419d62522c15cdf52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lavaDamage: 25
 --- !u!1 &3062971671990853165
 GameObject:
   m_ObjectHideFlags: 0

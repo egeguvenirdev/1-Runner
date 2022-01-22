@@ -4,29 +4,50 @@ using UnityEngine;
 
 public class playerManagement : MonoBehaviour
 {
-    public float playerHealth = 50f;
+
+    //ui
+    public GameObject healtBarUi;
+    public GameObject crosshair;
+
+    //player
+    public GameObject gun;
+    public HealthBar healtBar;
+    public int playerHealth, playerCurrentHealth;
     public GameObject death_effect;
 
 
-    public void PlayerDeath(float playerDamage)
+    private void Start()
+    {
+        playerCurrentHealth = playerHealth;
+        healtBar.SetMaxHealth(playerHealth);
+    }
+
+    public void PlayerDeath(int playerTakeDamage)
     {
         //blood loss effect
         Instantiate(death_effect, transform.position, Quaternion.identity);
 
-        playerHealth -= playerDamage;
-
+        playerCurrentHealth -= playerTakeDamage;
+        healtBar.SetHealth(playerCurrentHealth);
 
         //death
-        if (playerHealth <= 0 && gameObject != null)
+        if (playerCurrentHealth <= 0 && gameObject != null)
         {
             //lock player movements
             GetComponent<Jump>().enabled = false;
             GetComponent<FirstPersonMovement>().enabled = false;
             GetComponent<Crouch>().enabled = false;
+            gameObject.transform.GetChild(0).gameObject.GetComponent<FirstPersonLook>().enabled = false;
+            gameObject.transform.GetChild(0).gameObject.GetComponent<FirstPersonLook>().enabled = false;
 
-            //unluck cursor for ui
+            //unluck cursor and gun
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
+            gun.SetActive(false);
+
+            //remove the crosshair and healthbar
+            crosshair.SetActive(false);
+            healtBarUi.SetActive(false);
 
         }
     }

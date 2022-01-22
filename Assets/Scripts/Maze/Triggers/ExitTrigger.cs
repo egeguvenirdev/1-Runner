@@ -9,40 +9,34 @@ public class ExitTrigger : MonoBehaviour
     public LevelManager lm;
     public EnterTrigger et;
     private GameObject[] liveEnemies;
+    private Collider col;
 
     private void Start()
     {
-        gameObject.GetComponent<Collider>().isTrigger = false;
+        col = GetComponent<Collider>();
+        col.isTrigger = false;
     }
 
-    private void FixedUpdate()
+    /*private void FixedUpdate()
     {
         liveEnemies = GameObject.FindGameObjectsWithTag("Enemy");
 
-        if(liveEnemies.Length > 0)
-        {
-            Debug.Log("kapi kapali");
-            gameObject.GetComponent<Collider>().isTrigger = false;
-        }
-        else
+        if(liveEnemies.Length == 0)
         {
             Debug.Log("kapi acik");
-            gameObject.GetComponent<Collider>().isTrigger = true;
+            gameObject.GetComponent<Collider>().isTrigger = false;
         }
-        /*foreach (GameObject enemy in liveEnemies)
-        {
-            if(enemy == null)
-            {
-                Destroy(enemy);
-            }
-        }*/
-
-    }
+    }*/
 
     private void OnTriggerEnter(Collider other)
     {
         //Invoke("TriggerOff", 1f);
         lm.ExitMethod();
         et.TriggerOn();
+    }
+
+    public void OpenGate()
+    {
+        col.isTrigger = true;
     }
 }

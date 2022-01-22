@@ -25541,6 +25541,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5750298619292392735}
   - component: {fileID: 5750298619292392734}
+  - component: {fileID: 30263700}
   m_Layer: 11
   m_Name: ExitCollider
   m_TagString: Untagged
@@ -25575,6 +25576,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 135, y: 70, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &30263700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5750298619292392729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83aa0298ca850d74e810fcf985a8470d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lm: {fileID: 5750298620074321777}
+  et: {fileID: 5750298620247916528}
 --- !u!1 &5750298619376125250
 GameObject:
   m_ObjectHideFlags: 0
@@ -25694,6 +25709,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81cadd1529418d2419d62522c15cdf52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lavaDamage: 25
 --- !u!1 &5750298619420462778
 GameObject:
   m_ObjectHideFlags: 0
@@ -33752,6 +33768,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerEnter: 0
   playerExit: 0
+  exitTrigger: {fileID: 30263700}
   fallinRocks:
   - {fileID: 8124223991069104716, guid: d8cdde56ba5fb9041bb81dfacd68f168, type: 3}
   - {fileID: 5860241951590176064, guid: 3bf0802956966df48baf21e37095fa8c, type: 3}
@@ -35285,6 +35302,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1f0a5333cab6b042a932fe960313aba, type: 3}
+--- !u!4 &8481425086992872127 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3611496239414783489, guid: d1f0a5333cab6b042a932fe960313aba,
+    type: 3}
+  m_PrefabInstance: {fileID: 5164097839599574206}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4509939846066693700 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8735868350055234298, guid: d1f0a5333cab6b042a932fe960313aba,
@@ -35306,12 +35329,6 @@ Transform:
 --- !u!4 &2301954184186556401 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6366014810103493455, guid: d1f0a5333cab6b042a932fe960313aba,
-    type: 3}
-  m_PrefabInstance: {fileID: 5164097839599574206}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &8481425086992872127 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3611496239414783489, guid: d1f0a5333cab6b042a932fe960313aba,
     type: 3}
   m_PrefabInstance: {fileID: 5164097839599574206}
   m_PrefabAsset: {fileID: 0}

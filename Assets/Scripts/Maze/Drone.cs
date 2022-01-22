@@ -5,6 +5,7 @@ using UnityEngine;
 public class Drone : MonoBehaviour
 {
     public GameObject droneBlowUp;
+    public LevelManager lm;
     private Transform player;
     private float droneCd = 3;
     public float speed = 10f;
@@ -47,7 +48,8 @@ public class Drone : MonoBehaviour
         if(droneHealth <= 0 && gameObject != null)
         {
             Instantiate(droneBlowUp, transform.position, Quaternion.Euler(-90, 0, 0));
-            Destroy(this.gameObject);
+            Destroy(gameObject);
+            gameObject.GetComponentInParent<LevelManager>().SubstractDroneCount();
         }
     }
 

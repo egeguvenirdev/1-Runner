@@ -7,7 +7,7 @@ public class LevelManager : MonoBehaviour
     //exit and enter triggers
     public bool playerEnter = false;
     public bool playerExit = false;
-    private bool droneInstantiate = false;
+    public ExitTrigger exitTrigger;
 
     //random number variables
     private int randomRock;
@@ -17,6 +17,7 @@ public class LevelManager : MonoBehaviour
 
     //fallin rocks & drones and their random transforms
     public GameObject[] fallinRocks;
+    private GameObject[] drones;
     public GameObject drone;
     public Transform[] droneInstantiateTransforms;
     public Transform[] rockInstantiateTransforms;
@@ -28,7 +29,6 @@ public class LevelManager : MonoBehaviour
     public void EnterMethod()
     {
         playerEnter = true;
-        droneInstantiate = true;
 
         DroneSpawner();
         StartCoroutine(DropRocks());
@@ -48,15 +48,21 @@ public class LevelManager : MonoBehaviour
 
     private void DroneSpawner()
     {
-        if (droneInstantiate == true)
-        {
             for (droneCounter = 0; droneCounter < 4; droneCounter++)
             {
                 Instantiate(drone, droneInstantiateTransforms[droneCounter].transform.position, 
-                    droneInstantiateTransforms[droneCounter].transform.rotation);
-            }
-            droneInstantiate = false;
-        }
+                    droneInstantiateTransforms[droneCounter].transform.rotation, gameObject.transform);
+            }       
+    }
+
+    public void SubstractDroneCount()
+    {
+        droneCounter--;
+
+        if (droneCounter <= 0)
+        {
+            exitTrigger.OpenGate();
+        }   
     }
 
     //starting the fallin rocks
