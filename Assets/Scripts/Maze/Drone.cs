@@ -1,23 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Drone : MonoBehaviour
 {
+
+    //objects
     public GameObject droneBlowUp;
-    public LevelManager lm;
     private Transform player;
+    public HealthBar healthBar;
+
+    //drone stats
     private float droneCd = 3;
     public float speed = 10f;
-    private float droneHealth = 25f;
+    public int droneHealth; 
+    private int droneCurrentHealth;
 
+    //player follow
     private float distance;
     private float followDistance = 30f, lookAtDistance = 80;
     
-
+    //animation
     private CharacterState characterState;
     private Animator animator;
 
+    //drone shooting
     public GameObject bullet;
     public Transform firePoint;
     public GameObject shotEffect;
@@ -31,6 +39,9 @@ public class Drone : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         animator = GetComponent<Animator>();
+
+        droneCurrentHealth = droneHealth;
+        healthBar.SetMaxHealth(droneHealth);
     }
 
     void Update()
@@ -41,11 +52,12 @@ public class Drone : MonoBehaviour
         }
     }
 
-    public void GetHit(float hitDamage)
+    public void GetHit(int droneTakeDamage)
     {
-        droneHealth -= hitDamage;
+        droneCurrentHealth -= droneTakeDamage;
+        healthBar.SetHealth(droneCurrentHealth);
 
-        if(droneHealth <= 0 && gameObject != null)
+        if (droneCurrentHealth <= 0 && gameObject != null)
         {
             Instantiate(droneBlowUp, transform.position, Quaternion.Euler(-90, 0, 0));
             Destroy(gameObject);

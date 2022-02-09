@@ -21,6 +21,23 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1862076954, guid: 36075c327e528c5478126ac4e9c3133a, type: 3}
+      propertyPath: m_Name
+      value: Laser Gate Enter R
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862076955, guid: 36075c327e528c5478126ac4e9c3133a, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862076955, guid: 36075c327e528c5478126ac4e9c3133a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -210.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 1757558999145013173, guid: 36075c327e528c5478126ac4e9c3133a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3062971670588845000, guid: 36075c327e528c5478126ac4e9c3133a,
         type: 3}
       propertyPath: m_Name
@@ -266,10 +283,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3062971671649395601, guid: 36075c327e528c5478126ac4e9c3133a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 83.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062971671658341002, guid: 36075c327e528c5478126ac4e9c3133a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -208.23
+      objectReference: {fileID: 0}
     - target: {fileID: 3077483694426620703, guid: 36075c327e528c5478126ac4e9c3133a,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -123.6787
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113605705247922069, guid: 36075c327e528c5478126ac4e9c3133a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6531210732247929019, guid: 36075c327e528c5478126ac4e9c3133a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8642958035700168271, guid: 36075c327e528c5478126ac4e9c3133a,
         type: 3}

@@ -37,6 +37,11 @@ PrefabInstance:
       propertyPath: m_Parameters.colorGradient.key1.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3294396504751158635, guid: f6b31320c619d6243a0cbdd32d3e2d91,
+        type: 3}
+      propertyPath: bulletDamage
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1000013972658500, guid: f6b31320c619d6243a0cbdd32d3e2d91, type: 3}
       propertyPath: m_Name
       value: bulletDrone Variant

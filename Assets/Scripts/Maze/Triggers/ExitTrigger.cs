@@ -17,22 +17,12 @@ public class ExitTrigger : MonoBehaviour
         col.isTrigger = false;
     }
 
-    /*private void FixedUpdate()
-    {
-        liveEnemies = GameObject.FindGameObjectsWithTag("Enemy");
-
-        if(liveEnemies.Length == 0)
-        {
-            Debug.Log("kapi acik");
-            gameObject.GetComponent<Collider>().isTrigger = false;
-        }
-    }*/
-
     private void OnTriggerEnter(Collider other)
     {
-        //Invoke("TriggerOff", 1f);
         lm.ExitMethod();
         et.TriggerOn();
+        //lm.CloseAllLasers();
+        lm.OpenExitLasers();
     }
 
     public void OpenGate()

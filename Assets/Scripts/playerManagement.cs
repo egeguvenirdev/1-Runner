@@ -8,18 +8,19 @@ public class playerManagement : MonoBehaviour
     //ui
     public GameObject healtBarUi;
     public GameObject crosshair;
+    public HealthBar healthBar;
 
     //player
     public GameObject gun;
-    public HealthBar healtBar;
-    public int playerHealth, playerCurrentHealth;
+    public int playerHealth; 
+    private int playerCurrentHealth;
     public GameObject death_effect;
 
 
     private void Start()
     {
         playerCurrentHealth = playerHealth;
-        healtBar.SetMaxHealth(playerHealth);
+        healthBar.SetMaxHealth(playerHealth);
     }
 
     public void PlayerDeath(int playerTakeDamage)
@@ -28,7 +29,7 @@ public class playerManagement : MonoBehaviour
         Instantiate(death_effect, transform.position, Quaternion.identity);
 
         playerCurrentHealth -= playerTakeDamage;
-        healtBar.SetHealth(playerCurrentHealth);
+        healthBar.SetHealth(playerCurrentHealth);
 
         //death
         if (playerCurrentHealth <= 0 && gameObject != null)
