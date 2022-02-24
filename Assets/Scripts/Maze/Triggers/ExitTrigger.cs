@@ -22,11 +22,19 @@ public class ExitTrigger : MonoBehaviour
         lm.ExitMethod();
         et.TriggerOn();
         //lm.CloseAllLasers();
-        lm.OpenExitLasers();
+        Invoke("OpenCloseInvoke", 1);
+        //lm.OpenExitLasers();
+        //lm.CloseEnterLasers();
     }
 
     public void OpenGate()
     {
         col.isTrigger = true;
+    }
+
+    private void OpenCloseInvoke()
+    {
+        lm.OpenExitLasers();
+        lm.CloseEnterLasers();
     }
 }

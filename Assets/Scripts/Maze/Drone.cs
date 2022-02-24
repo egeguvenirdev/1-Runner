@@ -12,7 +12,7 @@ public class Drone : MonoBehaviour
     public HealthBar healthBar;
 
     //drone stats
-    private float droneCd = 3;
+    private float droneCd = 2;
     public float speed = 10f;
     public int droneHealth; 
     private int droneCurrentHealth;

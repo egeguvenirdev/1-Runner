@@ -40,6 +40,10 @@ public class LaserEnter : MonoBehaviour
                 playerManagement.PlayerDeath(50);
             }
         }
+        else
+        {
+            lineRenderer.enabled = false;
+        }
     }
 
     public void OpenLaserGate()
