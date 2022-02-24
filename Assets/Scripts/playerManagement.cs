@@ -8,10 +8,8 @@ public class playerManagement : MonoBehaviour
     //ui
     public GameObject healtBarUi;
     public GameObject gameoverUI;
-    public GameObject backButtonUI;
     public GameObject crosshair;
     public HealthBar healthBar;
-    private bool isPaused = false;
 
     //player
     public GameObject gun;
@@ -26,26 +24,6 @@ public class playerManagement : MonoBehaviour
         playerCurrentHealth = playerHealth;
         healthBar.SetMaxHealth(playerHealth);
     }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if(isPaused == false)
-            {
-                isPaused = true;
-                PauseMenu();
-            }
-            else
-            {
-                isPaused = false;
-                ResumeMenu();
-            }
-            
-        }
-            
-    }
-
 
     public void PlayerDeath(int playerTakeDamage)
     {
@@ -80,40 +58,5 @@ public class playerManagement : MonoBehaviour
         }
     }
 
-    private void PauseMenu()
-    {
-        gameoverUI.SetActive(true);
-        backButtonUI.SetActive(true);
-
-        Time.timeScale = 0;
-
-        firstPersonLook.enabled = false;
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
-    }
-
-    private void ResumeMenu()
-    {
-        gameoverUI.SetActive(false);
-        backButtonUI.SetActive(false);
-
-        Time.timeScale = 1;
-
-        firstPersonLook.enabled = true;
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-    }
-
-    public void ResumeButton()
-    {
-        gameoverUI.SetActive(false);
-        backButtonUI.SetActive(false);
-
-        Time.timeScale = 1;
-
-        firstPersonLook.enabled = true;
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-    }
-
+    
 }
